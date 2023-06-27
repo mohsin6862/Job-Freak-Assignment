@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Left Panel Navigation</title>
+  <style>
+    #left-panel {
+      float: left;
+      width: 200px;
+      background-color: #f2f2f2;
+      height: 100vh;
+    }
+    #content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .component {
+      cursor: pointer;
+      padding: 10px;
+    }
+    .component:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="left-panel">
+    <div class="component" onclick="showContent('home')">Home</div>
+    <div class="component" onclick="showContent('contact')">Contact</div>
+    <div class="component" onclick="showContent('information')">Information</div>
+    <div class="component" onclick="showContent('guide')">Guide</div>
+  </div>
+  <div id="content">
+    <h1>Welcome!</h1>
+    <p>Select a component from the left panel to view its content.</p>
+  </div>
+  <script>
+    function showContent(component) {
+      var contentDiv = document.getElementById('content');
+      switch (component) {
+        case 'home':
+          contentDiv.innerHTML = `
+            <h1>Home</h1>
+            <p>This is the home page content.</p>
+          `;
+          break;
+        case 'contact':
+          contentDiv.innerHTML = `
+            <h1>Contact</h1>
+            <p>Contact information goes here.</p>
+          `;
+          break;
+        case 'information':
+          contentDiv.innerHTML = `
+            <h1>Information</h1>
+            <p>Additional information is displayed here.</p>
+          `;
+          break;
+        case 'guide':
+          contentDiv.innerHTML = `
+            <h1>Guide</h1>
+            <p>This is the guide section with useful instructions.</p>
+          `;
+          break;
+        default:
+          contentDiv.innerHTML = `
+            <h1>Welcome!</h1>
+            <p>Select a component from the left panel to view its content.</p>
+          `;
+      }
+    }
+  </script>
+</body>
+</html>
